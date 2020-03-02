@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -31,4 +33,15 @@ public class Reader {
     private String lastName;
     @Column
     private Date creationDate;
+    @OneToMany(
+            targetEntity = Hire.class,
+            mappedBy = "reader",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<Hire> hires = new ArrayList<>();
+
+    public void addHire(Hire hire) {
+        hires.add(hire);
+    }
 }

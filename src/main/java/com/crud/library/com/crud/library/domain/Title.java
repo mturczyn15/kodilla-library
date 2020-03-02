@@ -3,9 +3,12 @@ package com.crud.library.com.crud.library.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -31,4 +34,16 @@ public class Title {
     private String author;
     @Column
     private int year;
+    @Setter
+    @OneToMany(
+            targetEntity = Book.class,
+            mappedBy = "title",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<Book> books = new ArrayList<>();
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
 }
