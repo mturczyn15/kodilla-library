@@ -1,3 +1,4 @@
+/*
 
 package com.crud.library.repository;
 
@@ -35,3 +36,4 @@ public class ReaderRepositoryTestSuite {
         readerRepository.deleteById(id);
     }
 }
+*/

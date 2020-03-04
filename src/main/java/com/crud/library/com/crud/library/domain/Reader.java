@@ -3,6 +3,7 @@ package com.crud.library.com.crud.library.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -33,6 +34,7 @@ public class Reader {
     private String lastName;
     @Column
     private Date creationDate;
+    /*@Setter
     @OneToMany(
             targetEntity = Hire.class,
             mappedBy = "reader",
@@ -43,5 +45,5 @@ public class Reader {
 
     public void addHire(Hire hire) {
         hires.add(hire);
-    }
+    }*/
 }

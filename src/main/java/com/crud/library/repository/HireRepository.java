@@ -1,3 +1,4 @@
+/*
 package com.crud.library.repository;
 
 
@@ -11,3 +12,4 @@ import javax.transaction.Transactional;
 @Repository
 public interface HireRepository extends CrudRepository<Hire, Long> {
 }
+*/

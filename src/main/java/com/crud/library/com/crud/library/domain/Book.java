@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,11 +31,18 @@ public class Book {
     private Title title;
     @Column
     private String status;
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    private Hire hire;
+    //@Setter
+   // @OneToMany(
+           // targetEntity = Hire.class,
+           // mappedBy = "book",
+           // cascade = CascadeType.ALL,
+            //fetch = FetchType.LAZY
+    //)
+    //private List<Hire> hires = new ArrayList<>();
+
+    //public void addHire(Hire hire) {
+       // hires.add(hire);
+    //}
 
 
 }

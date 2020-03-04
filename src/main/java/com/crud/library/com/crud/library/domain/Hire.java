@@ -1,3 +1,4 @@
+/*
 package com.crud.library.com.crud.library.domain;
 
 import lombok.AllArgsConstructor;
@@ -5,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 
 @Setter
@@ -19,14 +21,21 @@ public class Hire {
         this.returnDate = returnDate;
     }
 
-    @OneToOne
-    @JoinColumn(name = "bookId")
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @NotNull
+    private Long id;
+    //@ManyToOne
+    //@JoinColumn(name = "bookId")
+    @Column
     private Book book;
-    @ManyToOne
-    @JoinColumn(name = "readerId")
+    //@ManyToOne
+    //@JoinColumn(name = "readerId")
+    @Column
     private Reader Reader;
     @Column
     private Date hireDate;
     @Column
     private Date returnDate;
 }
+*/
