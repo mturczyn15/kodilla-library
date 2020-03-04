@@ -1,4 +1,3 @@
-/*
 
 package com.crud.library.repository;
 
@@ -11,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
@@ -22,7 +22,7 @@ public class ReaderRepositoryTestSuite {
     @Test
     public void testReaderRepositorySave() {
         //Given
-        Reader reader = new Reader( "Kamil", "Zawada", Date.valueOf("2009-11-04"));
+        Reader reader = new Reader( "Kamil", "Zawada", LocalDate.of(2009,11, 4));
 
         //When
         readerRepository.save(reader);
@@ -33,7 +33,6 @@ public class ReaderRepositoryTestSuite {
         Assert.assertTrue(readReader.isPresent());
 
         //CleanUp
-        readerRepository.deleteById(id);
+        //readerRepository.deleteById(id);
     }
 }
-*/

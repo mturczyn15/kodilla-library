@@ -1,4 +1,3 @@
-/*
 package com.crud.library.com.crud.library.domain;
 
 import lombok.AllArgsConstructor;
@@ -8,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -16,26 +16,24 @@ import java.sql.Date;
 @Entity(name = "hires")
 public class Hire {
 
-    public Hire(Date hireDate, Date returnDate) {
+    public Hire(LocalDate hireDate, LocalDate returnDate) {
         this.hireDate = hireDate;
         this.returnDate = returnDate;
     }
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
+    @Column
     private Long id;
-    //@ManyToOne
-    //@JoinColumn(name = "bookId")
-    @Column
-    private Book book;
-    //@ManyToOne
-    //@JoinColumn(name = "readerId")
-    @Column
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "exemplarId")
+    private Exemplar exemplar;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "readerId")
     private Reader Reader;
     @Column
-    private Date hireDate;
+    private LocalDate hireDate;
     @Column
-    private Date returnDate;
+    private LocalDate returnDate;
 }
-*/

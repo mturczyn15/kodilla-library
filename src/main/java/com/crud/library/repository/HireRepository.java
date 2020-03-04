@@ -1,4 +1,3 @@
-/*
 package com.crud.library.repository;
 
 
@@ -11,5 +10,8 @@ import javax.transaction.Transactional;
 @Transactional
 @Repository
 public interface HireRepository extends CrudRepository<Hire, Long> {
+
+    Hire findByExemplar_IdAndReturnDateIsNull(Long exemplarId);
+
+    //Hire findByBookAndReturnDateIsNull(Book book);
 }
-*/

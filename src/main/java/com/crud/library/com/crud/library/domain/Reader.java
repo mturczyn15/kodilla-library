@@ -8,8 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 @Getter
 @AllArgsConstructor
@@ -17,7 +16,7 @@ import java.util.List;
 @Entity(name = "readers")
 public class Reader {
 
-    public Reader(String name, String lastName, Date creationDate) {
+    public Reader(String name, String lastName, LocalDate creationDate) {
         this.name = name;
         this.lastName = lastName;
         this.creationDate = creationDate;
@@ -33,17 +32,6 @@ public class Reader {
     @Column
     private String lastName;
     @Column
-    private Date creationDate;
-    /*@Setter
-    @OneToMany(
-            targetEntity = Hire.class,
-            mappedBy = "reader",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    private List<Hire> hires = new ArrayList<>();
+    private LocalDate creationDate;
 
-    public void addHire(Hire hire) {
-        hires.add(hire);
-    }*/
 }

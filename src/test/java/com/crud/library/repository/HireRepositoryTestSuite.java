@@ -1,10 +1,9 @@
-/*
 package com.crud.library.repository;
 
 import com.crud.library.com.crud.library.domain.Book;
 import com.crud.library.com.crud.library.domain.Hire;
 import com.crud.library.com.crud.library.domain.Reader;
-import com.crud.library.com.crud.library.domain.Title;
+import com.crud.library.com.crud.library.domain.Exemplar;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,24 +20,26 @@ public class HireRepositoryTestSuite {
     @Autowired
     private HireRepository hireRepository;
     @Autowired
-    private TitleRepository titleRepository;
+    private BookRepository bookRepository;
+    @Autowired
+    private ReaderRepository readerRepository;
     private static final String STATUS = "Hired";
 
     @Test
     public void testHireRepositorySave() {
 
         //Given
-        Title title = new Title( "Leśne przygody", "Zawada Janusz", 2017);
-        Book book1 = new Book(STATUS);
-        title.addBook(book1);
-        book1.setTitle(title);
-        titleRepository.save(title);
-        Reader reader = new Reader("Kamil", "Zawada", Date.valueOf("2009-11-04"));
-        Hire hire = new Hire(Date.valueOf("2009-11-04"), Date.valueOf("2009-11-04"));
-        hire.setBook(book1);
+        Book book = new Book( "Leśne przygody", "Zawada Janusz", 2017);
+        Exemplar exemplar = new Exemplar(book, STATUS);
+        book.addExemplar(exemplar);
+
+        bookRepository.save(book);
+        Reader reader = new Reader("Kamil", "Zawada", LocalDate.of(2009, 11, 4));
+        readerRepository.save(reader);
+        Hire hire = new Hire(LocalDate.of(2009, 11, 4), LocalDate.of(2009, 11, 4));
+        hire.setExemplar(exemplar);
         hire.setReader(reader);
-        reader.addHire(hire);
-        book1.addHire(hire);
+
 
         //When
         hireRepository.save(hire);
@@ -45,7 +47,9 @@ public class HireRepositoryTestSuite {
         //Then
 
 
+        //CleanUp
+        hireRepository.delete(hire);
+
     }
 
 }
-*/

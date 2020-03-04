@@ -1,7 +1,8 @@
-/*package com.crud.library.controller;
+/*
+package com.crud.library.controller;
 
 
-import com.crud.library.com.crud.library.domain.BookDto;
+import com.crud.library.com.crud.library.domain.ExemplarDto;
 import com.crud.library.com.crud.library.domain.ReaderDto;
 import com.crud.library.com.crud.library.domain.TitleDto;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +14,9 @@ public class LibraryController {
 
     public void createReader(ReaderDto readerDto) { }
     public void createTitle(TitleDto titleDto) { }
-    public void createBook(BookDto bookDto) { }
-    public BookDto updateBookStatus(BookDto bookDto){}
+    public void createBook(ExemplarDto exemplarDtoDto) { }
+    public ExemplarDto updateBookStatus(ExemplarDto exemplarDto){}
 
 
-}*/
+}
+*/
