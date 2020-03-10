@@ -4,14 +4,16 @@ import com.crud.library.com.crud.library.domain.Book;
 import com.crud.library.com.crud.library.domain.Hire;
 import com.crud.library.com.crud.library.domain.Reader;
 import com.crud.library.com.crud.library.domain.Exemplar;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
+
+import static java.util.Optional.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -43,10 +45,11 @@ public class HireRepositoryTestSuite {
 
         //When
         hireRepository.save(hire);
+        Long id = hire.getId();
+        Optional<Hire> opt = hireRepository.findById(id);
 
         //Then
-
-
+        Assert.assertTrue(opt.isPresent());
         //CleanUp
         hireRepository.delete(hire);
 

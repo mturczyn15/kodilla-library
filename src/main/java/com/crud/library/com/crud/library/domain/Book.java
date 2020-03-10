@@ -17,12 +17,6 @@ import java.util.List;
 @Entity(name = "books")
 public class Book {
 
-    public Book(String title, String author, int year) {
-        this.title = title;
-        this.author = author;
-        this.year = year;
-    }
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @NotNull
