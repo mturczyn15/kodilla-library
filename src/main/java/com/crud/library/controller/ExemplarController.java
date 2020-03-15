@@ -1,6 +1,7 @@
 package com.crud.library.controller;
 
 import com.crud.library.com.crud.library.domain.ExemplarDto;
+import com.crud.library.com.crud.library.domain.Status;
 import com.crud.library.service.ExemplarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -21,9 +22,9 @@ public class ExemplarController {
         return exemplarService.create(exemplarDto);
     }
 
-   /* @RequestMapping(method = RequestMethod.PUT, value = "updateExemplarStatus")
+    @RequestMapping(method = RequestMethod.PUT, value = "updateStatus")
     public ExemplarDto updateExemplar(@RequestBody ExemplarDto exemplarDto) {
-        return exemplarMapper.mapToExemplarDto(exemplarService.saveExemplar(exemplarMapper.mapToExemplar(exemplarDto)));
-    }*/
+        return exemplarService.update(exemplarDto);
+    }
 }
 

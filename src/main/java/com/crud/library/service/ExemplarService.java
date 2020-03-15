@@ -31,4 +31,12 @@ public class ExemplarService {
         Exemplar exemplar = exemplarMapper.map(exemplarDto, book);
         return exemplarMapper.mapToDto(save(exemplar));
     }
+
+    public ExemplarDto update(ExemplarDto exemplarDto) {
+        Book book = bookRepository.findById(exemplarDto.getBookId()).orElseThrow(() -> new EntityNotFoundException(Book.class, exemplarDto.getBookId()));
+        Exemplar exemplar = exemplarMapper.map(exemplarDto, book);
+        return exemplarMapper.mapToDto(save(exemplar));
+    }
+
+
 }
