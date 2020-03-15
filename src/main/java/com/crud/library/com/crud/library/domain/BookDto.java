@@ -3,8 +3,8 @@ package com.crud.library.com.crud.library.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
+@Getter
 public class BookDto {
 
     private Long id;

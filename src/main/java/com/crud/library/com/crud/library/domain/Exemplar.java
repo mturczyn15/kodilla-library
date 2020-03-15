@@ -1,6 +1,5 @@
 package com.crud.library.com.crud.library.domain;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +14,6 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "exemplars")
 public class Exemplar {
 
-    public Exemplar(Book book, String status) {
-        this.book = book;
-        this.status = status;
-    }
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @NotNull
@@ -28,7 +22,7 @@ public class Exemplar {
     @ManyToOne
     @JoinColumn(name= "book_id")
     private Book book;
+    @Enumerated(EnumType.STRING)
     @Column
-    private String status;
-
+    private Status status;
 }

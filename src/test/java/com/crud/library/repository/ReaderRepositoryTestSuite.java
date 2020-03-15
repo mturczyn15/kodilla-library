@@ -1,3 +1,4 @@
+/*
 
 package com.crud.library.repository;
 
@@ -22,7 +23,7 @@ public class ReaderRepositoryTestSuite {
     @Test
     public void testReaderRepositorySave() {
         //Given
-        Reader reader = new Reader( "Kamil", "Zawada", LocalDate.of(2009,11, 4));
+        Reader reader = new Reader((long)1, "Kamil", "Zawada", LocalDate.of(2009,11, 4));
 
         //When
         readerRepository.save(reader);
@@ -36,3 +37,4 @@ public class ReaderRepositoryTestSuite {
         //readerRepository.deleteById(id);
     }
 }
+*/

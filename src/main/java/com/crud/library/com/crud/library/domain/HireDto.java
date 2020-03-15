@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class HireDto {
 
-    private Long bookId;
-    private Long readerId;
+    private Long id;
+    private Exemplar exemplar;
+    private Reader reader;
     private LocalDate hireDate;
-    private LocalDate returnDate;
 }

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ import java.util.List;
 
 
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "books")
 public class Book {
@@ -36,6 +34,13 @@ public class Book {
             fetch = FetchType.LAZY
     )
     private List<Exemplar> exemplars = new ArrayList<>();
+
+    public Book(Long id, String title, String author, int year) {
+        this.year = year;
+        this.author = author;
+        this.title = title;
+        this.id = id;
+    }
 
     public void addExemplar(Exemplar exemplar) {
         exemplars.add(exemplar);

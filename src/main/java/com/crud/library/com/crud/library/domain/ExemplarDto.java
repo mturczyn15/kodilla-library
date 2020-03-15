@@ -1,6 +1,5 @@
 package com.crud.library.com.crud.library.domain;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -9,6 +8,6 @@ import lombok.Getter;
 public class ExemplarDto {
 
     private Long id;
-    private Long book;
-    private String status;
+    private Long bookId;
+    private Status status;
 }
