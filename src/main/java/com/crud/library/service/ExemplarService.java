@@ -10,11 +10,14 @@ import com.crud.library.repository.ExemplarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
+import java.util.List;
 
 
 @Service
 public class ExemplarService {
 
+    public static final String STATUS = "NONHIRED";
     @Autowired
     private ExemplarRepository exemplarRepository;
     @Autowired
@@ -39,4 +42,9 @@ public class ExemplarService {
     }
 
 
+    public List<ExemplarDto> getAvailableExemplars(Long bookId) {
+        Book book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException(Book.class, bookId));
+        List<Exemplar> list = exemplarRepository.findBySearchTerm(bookId);
+        return exemplarMapper.mapToDtoList(list, book);
+    }
 }

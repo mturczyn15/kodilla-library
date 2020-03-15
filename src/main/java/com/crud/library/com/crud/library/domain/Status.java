@@ -5,5 +5,5 @@ public enum Status {
     HIRED,
     DESTROYED,
     LOST,
-    NON_HIRED;
+    NONHIRED
 }

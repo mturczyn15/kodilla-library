@@ -32,7 +32,6 @@ public class BookMapper {
     public List<BookDto> mapToBookDtoList (final List<Book> bookList) {
         return bookList.stream()
                 .map(t -> new BookDto(t.getId(), t.getTitle(), t.getAuthor(), t.getYear()
-                        //, t.getExemplars()
                 ))
                 .collect(Collectors.toList());
     }
