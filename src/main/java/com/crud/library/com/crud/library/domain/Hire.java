@@ -1,5 +1,6 @@
 package com.crud.library.com.crud.library.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "hires")
 public class Hire {
 
@@ -29,12 +31,6 @@ public class Hire {
     @Column
     private LocalDate returnDate;
 
-    public Hire(Long id, Exemplar exemplar, Reader reader, LocalDate hireDate) {
 
-        this.id = id;
-        this.exemplar = exemplar;
-        this.reader = reader;
-        this.hireDate = hireDate;
-    }
 
 }

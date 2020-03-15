@@ -16,7 +16,8 @@ public interface ExemplarRepository extends CrudRepository<Exemplar, Long> {
     Exemplar save(Exemplar exemplar);
 
     @Query("SELECT e FROM exemplars e WHERE(book_id = :bookId AND status = 'nonhired')")
-    List<Exemplar> findBySearchTerm(@Param("bookId") Long bookId);
+    List<Exemplar> findExemplarsByBookIdAndStatus(@Param("bookId") Long bookId);
+
 }
 
 

@@ -25,7 +25,6 @@ public class BookMapper {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getYear()
-                //book.getExemplars()
         );
     }
 

@@ -1,9 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.com.crud.library.domain.EntityNotFoundException;
-import com.crud.library.com.crud.library.domain.Exemplar;
 import com.crud.library.com.crud.library.domain.ExemplarDto;
-import com.crud.library.com.crud.library.domain.Status;
 import com.crud.library.service.ExemplarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

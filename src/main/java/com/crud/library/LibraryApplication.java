@@ -1,6 +1,5 @@
 package com.crud.library;
 
-import com.crud.library.com.crud.library.domain.BookDto;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

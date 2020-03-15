@@ -10,7 +10,8 @@ import java.time.LocalDate;
 public class HireDto {
 
     private Long id;
-    private Exemplar exemplar;
-    private Reader reader;
+    private Long exemplarId;
+    private Long readerId;
     private LocalDate hireDate;
+    private LocalDate returnDate;
 }
