@@ -34,8 +34,8 @@ public class ExemplarService {
     }
 
     public ExemplarDto update(ExemplarDto exemplarDto) {
-        Book book = bookRepository.findById(exemplarDto.getBookId()).orElseThrow(() -> new EntityNotFoundException(Book.class, exemplarDto.getBookId()));
-        Exemplar exemplar = exemplarMapper.map(exemplarDto, book);
+        Exemplar exemplar = exemplarRepository.findById(exemplarDto.getId()).orElseThrow(() -> new EntityNotFoundException(Exemplar.class, exemplarDto.getId()));
+        exemplar.setStatus(exemplarDto.getStatus());
         return exemplarMapper.mapToDto(save(exemplar));
     }
 
