@@ -8,6 +8,7 @@ import com.crud.library.repository.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -42,6 +43,7 @@ public class HireService {
     public HireDto returnExemplar(HireDto hireDto) {
 
         Hire hire = hireRepository.findByExemplar_IdAndReturnDateIsNull(hireDto.getExemplarId());
+        hire.setReturnDate(LocalDate.now());
         Exemplar exemplar = hire.getExemplar();
         exemplar.setStatus(Status.NONHIRED);
         exemplarRepository.save(exemplar);

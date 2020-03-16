@@ -39,7 +39,6 @@ public class ExemplarService {
         return exemplarMapper.mapToDto(save(exemplar));
     }
 
-
     public List<ExemplarDto> getAvailableExemplars(Long bookId) {
         Book book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException(Book.class, bookId));
         List<Exemplar> list = exemplarRepository.findExemplarsByBookIdAndStatus(bookId);
