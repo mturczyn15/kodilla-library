@@ -41,7 +41,7 @@ public class ExemplarService {
 
     public List<ExemplarDto> getAvailableExemplars(Long bookId) {
         Book book = bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException(Book.class, bookId));
-        List<Exemplar> list = exemplarRepository.findExemplarsByBookIdAndStatus(bookId);
+        List<Exemplar> list = exemplarRepository.findByBook_IdNonHired(bookId);
         return exemplarMapper.mapToDtoList(list, book);
     }
 }

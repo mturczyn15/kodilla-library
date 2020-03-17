@@ -27,8 +27,7 @@ public class ExemplarMapper {
 
     public List<ExemplarDto> mapToDtoList (final List<Exemplar> exemplarList, Book book) {
         return exemplarList.stream()
-                .map(t -> new ExemplarDto(t.getId(), t.getBook().getId(), t.getStatus()
-                ))
+                .map(this::mapToDto)
                 .collect(Collectors.toList());
     }
 }

@@ -15,17 +15,17 @@ public class ExemplarController {
     @Autowired
     private ExemplarService exemplarService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "createExemplar", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "createExemplar", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ExemplarDto createExemplar(@RequestBody ExemplarDto exemplarDto) {
         return exemplarService.create(exemplarDto);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "updateStatus")
+    @PutMapping( value = "updateStatus")
     public ExemplarDto updateExemplar(@RequestBody ExemplarDto exemplarDto) {
         return exemplarService.update(exemplarDto);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getExemplars")
+    @GetMapping( value = "getExemplars")
     public List<ExemplarDto> getExemplars(@RequestParam Long bookId) {
         return exemplarService.getAvailableExemplars(bookId);
     }

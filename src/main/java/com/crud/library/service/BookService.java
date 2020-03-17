@@ -19,9 +19,8 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book create(BookDto bookDto) {
-        return save(bookMapper.map(bookDto));
+    public BookDto create(BookDto bookDto) {
+        Book book = bookMapper.map(bookDto);
+        return bookMapper.mapToDto(save(book));
     }
-
-
 }
