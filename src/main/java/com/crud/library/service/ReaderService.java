@@ -1,7 +1,6 @@
 package com.crud.library.service;
 
-import com.crud.library.com.crud.library.domain.Reader;
-import com.crud.library.com.crud.library.domain.ReaderDto;
+import com.crud.library.domain.*;
 import com.crud.library.mapper.ReaderMapper;
 import com.crud.library.repository.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;

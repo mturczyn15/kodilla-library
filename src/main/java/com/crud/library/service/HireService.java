@@ -1,6 +1,6 @@
 package com.crud.library.service;
 
-import com.crud.library.com.crud.library.domain.*;
+import com.crud.library.domain.*;
 import com.crud.library.mapper.HireMapper;
 import com.crud.library.repository.ExemplarRepository;
 import com.crud.library.repository.HireRepository;

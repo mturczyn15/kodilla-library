@@ -1,9 +1,9 @@
 package com.crud.library.service;
 
-import com.crud.library.com.crud.library.domain.Book;
-import com.crud.library.com.crud.library.domain.EntityNotFoundException;
-import com.crud.library.com.crud.library.domain.Exemplar;
-import com.crud.library.com.crud.library.domain.ExemplarDto;
+import com.crud.library.domain.Book;
+import com.crud.library.domain.EntityNotFoundException;
+import com.crud.library.domain.Exemplar;
+import com.crud.library.domain.ExemplarDto;
 import com.crud.library.mapper.ExemplarMapper;
 import com.crud.library.repository.BookRepository;
 import com.crud.library.repository.ExemplarRepository;

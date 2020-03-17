@@ -1,6 +1,6 @@
 package com.crud.library.repository;
 
-import com.crud.library.com.crud.library.domain.Exemplar;
+import com.crud.library.domain.Exemplar;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -15,8 +15,9 @@ public interface ExemplarRepository extends CrudRepository<Exemplar, Long> {
     @Override
     Exemplar save(Exemplar exemplar);
 
-    @Query("SELECT e FROM exemplars e WHERE(book_id = :bookId AND status = 'nonhired')")
+    @Query("SELECT t FROM Exemplars t WHERE(book_id = :bookId AND status = 'nonhired')")
     List<Exemplar> findExemplarsByBookIdAndStatus(@Param("bookId") Long bookId);
+
 
 }
 

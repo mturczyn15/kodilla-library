@@ -1,4 +1,4 @@
-package com.crud.library.com.crud.library.domain;
+package com.crud.library.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "readers")
+@Entity(name = "Readers")
 public class Reader {
 
     @Id

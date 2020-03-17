@@ -1,4 +1,4 @@
-package com.crud.library.com.crud.library.domain;
+package com.crud.library.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "exemplars")
+@Entity(name = "Exemplars")
 public class Exemplar {
 
     @Id

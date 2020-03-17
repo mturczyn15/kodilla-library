@@ -1,4 +1,4 @@
-package com.crud.library.com.crud.library.domain;
+package com.crud.library.domain;
 
 public class NotAbleToHireException extends RuntimeException {
 

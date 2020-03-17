@@ -1,13 +1,10 @@
 package com.crud.library.mapper;
 
-import com.crud.library.com.crud.library.domain.Exemplar;
-import com.crud.library.com.crud.library.domain.Hire;
-import com.crud.library.com.crud.library.domain.HireDto;
-import com.crud.library.com.crud.library.domain.Reader;
+import com.crud.library.domain.Exemplar;
+import com.crud.library.domain.Hire;
+import com.crud.library.domain.HireDto;
+import com.crud.library.domain.Reader;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class HireMapper {
@@ -29,10 +26,4 @@ public class HireMapper {
                 hire.getHireDate(),
                 hire.getReturnDate());
     }
-
-    /*public List<HireDto> mapToHireDtoList (final List<Hire> hireList) {
-        return hireList.stream()
-                .map(t -> new HireDto(t.getId(), t.getExemplar(), t.getReader(), t.getHireDate(), t.getReturnDate()))
-                .collect(Collectors.toList());
-    }*/
 }

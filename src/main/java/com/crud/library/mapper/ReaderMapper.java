@@ -1,7 +1,7 @@
 package com.crud.library.mapper;
 
-import com.crud.library.com.crud.library.domain.Reader;
-import com.crud.library.com.crud.library.domain.ReaderDto;
+import com.crud.library.domain.Reader;
+import com.crud.library.domain.ReaderDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

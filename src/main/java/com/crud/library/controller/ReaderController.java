@@ -1,6 +1,6 @@
 package com.crud.library.controller;
 
-import com.crud.library.com.crud.library.domain.ReaderDto;
+import com.crud.library.domain.ReaderDto;
 import com.crud.library.service.ReaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

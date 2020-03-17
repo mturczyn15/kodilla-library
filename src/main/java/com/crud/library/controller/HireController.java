@@ -1,7 +1,7 @@
 package com.crud.library.controller;
 
-import com.crud.library.com.crud.library.domain.ExemplarDto;
-import com.crud.library.com.crud.library.domain.HireDto;
+import com.crud.library.domain.ExemplarDto;
+import com.crud.library.domain.HireDto;
 import com.crud.library.service.HireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

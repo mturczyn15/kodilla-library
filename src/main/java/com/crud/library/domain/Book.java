@@ -1,6 +1,5 @@
-package com.crud.library.com.crud.library.domain;
+package com.crud.library.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-@Entity(name = "books")
+@Entity(name = "Books")
 public class Book {
 
     @Id
