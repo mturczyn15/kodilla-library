@@ -18,7 +18,8 @@ public class ReaderService {
         return readerRepository.save(reader);
     }
 
-    public Reader create(ReaderDto readerDto) {
-        return save(readerMapper.map(readerDto));
+    public ReaderDto create(ReaderDto readerDto) {
+        Reader reader = save(readerMapper.map(readerDto));
+        return readerMapper.mapToDto(reader);
     }
 }
